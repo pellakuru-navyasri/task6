@@ -8,3 +8,7 @@ output "sql_connection_string" {
   description = "ADO.NET SQL connection string"
   sensitive   = true
 }
+output "app_hostname" {
+  description = "Hostname of the Web App from webapp module"
+  value       = module.webapp.app_hostname
+}
