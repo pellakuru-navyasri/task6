@@ -1,6 +1,6 @@
 resource "random_password" "sql_admin_password" {
-  length  = 16
-  special = true
+  length           = 16
+  special          = true
   override_special = "!@#$%"
 }
 
