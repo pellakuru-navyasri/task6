@@ -39,6 +39,8 @@ module "webapp" {
   tags                  = local.tags
   depends_on            = [azurerm_resource_group.rg]
 }
+data "azurerm_client_config" "current" {}
+
 resource "azurerm_key_vault" "this" {
   name                     = var.kv_name
   location                 = var.location
