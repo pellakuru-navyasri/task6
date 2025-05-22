@@ -1,6 +1,7 @@
 resource "random_password" "sql_admin_password" {
   length  = 16
   special = true
+  override_special = "!@#$%"
 }
 
 resource "azurerm_mssql_server" "sql_server" {
@@ -17,8 +18,8 @@ resource "azurerm_mssql_server" "sql_server" {
 resource "azurerm_mssql_firewall_rule" "allow_azure" {
   name             = "AllowAzureServices"
   server_id        = azurerm_mssql_server.sql_server.id
-  start_ip_address = "203.170.48.2"
-  end_ip_address   = "203.170.48.2"
+  start_ip_address = "0.0.0.0"
+  end_ip_address   = "0.0.0.0"
 }
 
 resource "azurerm_mssql_firewall_rule" "allow_ip" {
