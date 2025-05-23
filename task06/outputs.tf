@@ -3,6 +3,6 @@ output "sql_server_fqdn" {
   description = "Fully qualified domain name of the SQL Server"
 }
 output "app_hostname" {
-  description = "Hostname of the Web App from webapp module"
+  description = "Hostname of the Web App from webapp"
   value       = module.webapp.app_hostname
 }
