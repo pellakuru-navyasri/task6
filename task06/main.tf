@@ -36,7 +36,7 @@ module "webapp" {
   sql_connection_string = module.sql.sql_connection_string
   app_dotnet_version    = var.app_dotnet_version
   tags                  = var.tags
-  
+
 }
 
 
