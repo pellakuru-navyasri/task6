@@ -3,12 +3,12 @@ variable "location" {
   description = "Azure region where all resources will be deployed."
 }
 
-variable "kv_rg_name" {
+variable "key_vault_rg_name" {
   type        = string
   description = "Name of the resource group containing the existing Key Vault."
 }
 
-variable "kv_name" {
+variable "key_vault_name" {
   type        = string
   description = "Name of the existing Key Vault where SQL credentials will be stored."
 }
@@ -18,12 +18,12 @@ variable "name_prefix" {
   description = "Name of the resource group to be created for the deployment."
 }
 
-variable "sql_admin_secret_name" {
+variable "secret_name_admin" {
   type        = string
   description = "Key Vault secret name where SQL admin username will be stored."
 }
 
-variable "sql_admin_secret_password" {
+variable "secret_name_password" {
   type        = string
   description = "Key Vault secret name where SQL admin password will be stored."
 }
@@ -33,12 +33,12 @@ variable "sql_admin_username" {
   description = "Admin login name for the SQL Server."
 }
 
-variable "sql_sku" {
+variable "sql_db_sku" {
   type        = string
   description = "The SKU (pricing tier) for the SQL Database."
 }
 
-variable "sql_fwr_name" {
+variable "firewall_rule_name" {
   type        = string
   description = "Name of the firewall rule to allow connections to the SQL Server."
 }
@@ -48,7 +48,7 @@ variable "allowed_ip_address" {
   description = "Public IP address to be allowed through SQL Server firewall."
 }
 
-variable "app_dotnet_version" {
+variable "dotnet_version" {
   type        = string
   description = "Version of .NET runtime to be used in the web application."
 }
