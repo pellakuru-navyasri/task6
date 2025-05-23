@@ -30,7 +30,7 @@ module "webapp" {
   source = "./modules/webapp"
 
   app_name              = local.app_name
-  asp_name              = local.app_name
+  asp_name              = local.asp_name
   asp_sku               = var.asp_sku
   location              = var.location
   rg_name               = local.rg_name
