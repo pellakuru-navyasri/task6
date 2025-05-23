@@ -2,9 +2,9 @@
 resource "azurerm_resource_group" "rg" {
   name     = local.rg_name
   location = var.location
-  tags     = local.tags
+  tags     = var.tags
 }
-
+data "azurerm_client_config" "current" {}
 data "azurerm_key_vault" "existing_kv" {
   name                = var.kv_name
   resource_group_name = var.kv_rg_name
@@ -23,7 +23,7 @@ module "sql" {
   key_vault_id              = data.azurerm_key_vault.existing_kv.id
   sql_admin_secret_name     = var.sql_admin_secret_name
   sql_admin_secret_password = var.sql_admin_secret_password
-  tags                      = local.tags
+  tags                      = var.tags
   depends_on                = [azurerm_resource_group.rg]
 }
 module "webapp" {
@@ -36,8 +36,8 @@ module "webapp" {
   rg_name               = local.rg_name
   sql_connection_string = module.sql.sql_connection_string
   app_dotnet_version    = var.app_dotnet_version
-  tags                  = local.tags
+  tags                  = var.tags
   depends_on            = [azurerm_resource_group.rg]
 }
-data "azurerm_client_config" "current" {}
+
 

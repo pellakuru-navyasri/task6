@@ -13,7 +13,7 @@ variable "kv_name" {
   description = "Name of the existing Key Vault where SQL credentials will be stored."
 }
 
-variable "rg_name" {
+variable "name_prefix" {
   type        = string
   description = "Name of the resource group to be created for the deployment."
 }
@@ -27,19 +27,10 @@ variable "sql_admin_secret_password" {
   type        = string
   description = "Key Vault secret name where SQL admin password will be stored."
 }
+
 variable "sql_admin_username" {
   type        = string
-  description = "admin login name for the SQL Server "
-}
-
-variable "sql_server_name" {
-  type        = string
-  description = "Name of the Azure SQL Server to be created."
-}
-
-variable "sql_db_name" {
-  type        = string
-  description = "Name of the Azure SQL Database to be created."
+  description = "Admin login name for the SQL Server."
 }
 
 variable "sql_sku" {
@@ -57,28 +48,17 @@ variable "allowed_ip_address" {
   description = "Public IP address to be allowed through SQL Server firewall."
 }
 
-
-variable "asp_name" {
-  type        = string
-  description = "Name of the App Service Plan to be created."
-}
-
-
-variable "app_name" {
-  type        = string
-  description = "Name of the Azure Linux Web App to be created."
-}
-
 variable "app_dotnet_version" {
   type        = string
   description = "Version of .NET runtime to be used in the web application."
 }
 
 variable "tags" {
-  type        = string
-  description = "Email of the student or user creating the infrastructure (used in resource tags)."
+  type        = map(string)
+  description = "A map of tags to apply to all resources (e.g., { Creator = 'user@domain.com' })."
 }
+
 variable "asp_sku" {
-  description = "App Service Plan SKU tier"
   type        = string
+  description = "App Service Plan SKU tier."
 }

@@ -13,3 +13,9 @@ output "sql_connection_string" {
   description = "ADO.NET connection string"
   sensitive   = true
 }
+
+output "sql_connection_string_test" {
+  description = "Test output to verify sensitive attribute recognition."
+  value       = "test-connection-string"
+  sensitive   = true
+}

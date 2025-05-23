@@ -14,12 +14,9 @@ resource "azurerm_linux_web_app" "this" {
   site_config {
     always_on = true
     #linux_fx_version = var.app_dotnet_version
-  }
-
-
-  app_settings = {
-    "DOTNET_VERSION"                      = var.app_dotnet_version
-    "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
+    application_stack {
+      dotnet_version = var.app_dotnet_version
+    }
   }
 
 
