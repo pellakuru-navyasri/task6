@@ -11,5 +11,5 @@ asp_sku              = "P0v3"
 dotnet_version       = "8.0"
 allowed_ip_address   = "18.153.146.156"
 tags = {
-  owner = "pellakuru_navyasri@epam.com"
+  Creator = "pellakuru_navyasri@epam.com"
 }
